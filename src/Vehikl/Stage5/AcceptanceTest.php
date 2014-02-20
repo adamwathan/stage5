@@ -24,6 +24,23 @@ class AcceptanceTest extends \TestCase {
         $el->click();
     }
 
+    protected function clickButton($buttonText)
+    {
+        $el = $this->getPage()->findButton($buttonText);
+        $el->click();
+    }
+
+    protected function fillIn($field, $value)
+    {
+        $el = $this->getPage()->findField($field);
+        $el->setValue($value);
+    }
+
+    protected function getPage()
+    {
+        return$this->session->getPage();
+    }
+
     protected function shouldSee($value)
     {
         $content = $this->session->getPage()->getContent();
