@@ -20,7 +20,7 @@ class AcceptanceTest extends \TestCase {
     protected function click($linkText)
     {
         $page = $this->session->getPage();
-        $el = $page->findLink('Click me');
+        $el = $page->findLink($linkText);
         $el->click();
     }
 
