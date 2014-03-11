@@ -1,5 +1,7 @@
 <?php namespace Vehikl\Stage5;
 
+use Behat\Mink\Driver\BrowserKitDriver;
+
 class AcceptanceTest extends \TestCase {
 
     protected $session;
@@ -9,7 +11,7 @@ class AcceptanceTest extends \TestCase {
     public function setUp()
     {
         parent::setUp();
-        $driver = new IlluminateDriver($this->client);
+        $driver = new BrowserKitDriver($this->client);
         $this->session = new \Behat\Mink\Session($driver);
         $this->session->start();
     }
